@@ -1,6 +1,6 @@
 # C template
 
-Template backend project for Rust
+Template backend project for C.
 
 # How to build
 
