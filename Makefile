@@ -1,9 +1,10 @@
 TARGET = hello_world
-CC = clang
-SYSROOT = --sysroot=/tmp/wasi-sdk/
-TARGET_TRIPLE = --target=wasm32-unknown-wasi
-CFLAGS = -nostartfiles -fvisibility=hidden -Wl,--no-entry,--demangle,--allow-undefined
-EXPORT_FUNCS = -Wl,--export=allocate,--export=deallocate,--export=invoke
+CC = /opt/wasi-sdk/bin/clang
+SYSROOT = /opt/wasi-sdk/share/sysroot
+TARGET_TRIPLE = wasm32-unknown-wasi
+CFLAGS = -nostartfiles -fvisibility=hidden
+LDFLAGS = -Wl,--no-entry,--demangle,--allow-undefined
+EXPORT_FUNCS = --export=allocate,--export=deallocate,--export=invoke
 SDK = sdk/allocator.c sdk/logger.c
 
 .PHONY: default all clean
@@ -12,7 +13,7 @@ default: $(TARGET)
 all: default
 
 $(TARGET): main.c $(SDK)
-	$(CC) $(SYSROOT) $(TARGET_TRIPLE) $(CFLAGS) $(EXPORT_FUNCS) $^ -o $@.wasm
+	$(CC) --sysroot=$(SYSROOT) --target=$(TARGET_TRIPLE) $(CFLAGS) $(LDFLAGS) -Wl,$(EXPORT_FUNCS) $^ -o $@.wasm
 
 .PRECIOUS: $(TARGET)
 

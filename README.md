@@ -1,9 +1,12 @@
-# C template
+# How to build
 
-Template backend project for Rust
-
-## How to compile
+This app could be built either with docker 
 
 ```bash
-~$ make
+docker-compose up
+```
+
+or by Makefile with [wasi-sdk](https://github.com/CraneStation/wasi-sdk) installed
+```bash
+make
 ```
