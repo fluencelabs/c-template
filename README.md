@@ -1,3 +1,7 @@
+# C template
+
+Template backend project for Rust
+
 # How to build
 
 This app could be built either with docker 
