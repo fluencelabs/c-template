@@ -33,7 +33,7 @@
     char* module_name ## _allocate(unsigned int size) __attribute__((__import_module__(#module_name), __import_name__(STRINGIZE(PPCAT(module_name, _allocate))))); \
     void module_name ## _deallocate(char *ptr, unsigned int size) __attribute__((__import_module__(#module_name), __import_name__(STRINGIZE(PPCAT(module_name, _deallocate))))); \
     char* module_name ## _invoke(char *ptr, int size) __attribute__((__import_module__(#module_name), __import_name__(STRINGIZE(PPCAT(module_name, _invoke))))); \
- \
+    \
 char * module_name ## _call(const char *ptr, int length) { \
     char *request_ptr = module_name ## _allocate(length); \
     \
@@ -43,15 +43,16 @@ char * module_name ## _call(const char *ptr, int length) { \
     char *result = module_name ## _invoke(request_ptr, length); \
     \
     unsigned int result_size = 0; \
-    char *result_out = malloc(result_size + 4);\
     for (int i = 0; i < 4; ++i) { \
-        result_out[i] = result[i]; \
         result_size = result_size | ((unsigned int)result[i] << 8*i); \
     } \
     \
-    for(int i = 0; i < result_size; ++i) {\
-        result_out[i] = module_name ## _load(result + 4 + i);\
+    char *result_out = malloc(result_size + 1); \
+    for(int i = 0; i < result_size; ++i) { \
+        result_out[i] = module_name ## _load(result + 4 + i); \
     }\
+    \
+    result_out[result_size] = '\0'; \
     \
     module_name ## _deallocate(result, result_size); \
     \
