@@ -1,8 +1,8 @@
 #ifndef C_TEMPLATE_SIDE_MODULE_API_H
 #define C_TEMPLATE_SIDE_MODULE_API_H
 
-#include <stdlib.h>
 #include <string.h>
+#include <sttlib.h>
 
 /*
  * Concatenate preprocessor tokens A and B without expanding macro definitions
