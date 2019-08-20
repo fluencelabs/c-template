@@ -2,7 +2,7 @@
 #define C_TEMPLATE_SIDE_MODULE_API_H
 
 #include <string.h>
-#include <sttlib.h>
+#include <stdlib.h>
 
 /*
  * Concatenate preprocessor tokens A and B without expanding macro definitions
