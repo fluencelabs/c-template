@@ -44,7 +44,7 @@ char * module_name ## _call(const char *ptr, int length) { \
     \
     unsigned int result_size = 0; \
     for (int i = 0; i < 4; ++i) { \
-        result_size = result_size | ((unsigned int)result[i] << 8*i); \
+        result_size = result_size | (module_name ## _load(result + i) << 8*i); \
     } \
     \
     char *result_out = malloc(result_size + 1); \
