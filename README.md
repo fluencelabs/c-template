@@ -14,3 +14,9 @@ or by Makefile with [wasi-sdk](https://github.com/CraneStation/wasi-sdk) install
 ```bash
 make
 ```
+
+## C/C++ application examples
+
+- [hello world](https://github.com/fluencelabs/tutorials/tree/master/hello-world/app-logger-c)
+- [Redis](https://github.com/fluencelabs/redis/tree/wasm)
+- [SQLite](https://github.com/fluencelabs/sqlite/tree/master)

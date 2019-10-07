@@ -1,13 +1,5 @@
 # IntelliJ
 .idea
-.vscode
-*.iml
 
-# MacOS folder metadata
-.DS_Store
-
-# Text writing
-*.scriv
-
-# Webassembly generated files
+# compiled wasm files
 *.wasm
