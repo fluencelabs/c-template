@@ -1,6 +1,7 @@
 # C template
 
-Template backend project for C.
+Template backend project for C. You can start developing your application by extending src/main.c.
+
 
 # How to build
 
