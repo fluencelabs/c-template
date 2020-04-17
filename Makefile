@@ -1,7 +1,7 @@
 TARGET = hello_world
 CC = /bin/clang
 SYSROOT = /share/wasi-sysroot
-TARGET_TRIPLE = wasm32-unknown-wasi
+TARGET_TRIPLE = wasm32-wasi
 CFLAGS = -nostartfiles -fvisibility=hidden
 LDFLAGS = -Wl,--no-entry,--demangle,--allow-undefined
 EXPORT_FUNCS = --export=allocate,--export=deallocate,--export=invoke
