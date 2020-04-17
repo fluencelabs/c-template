@@ -12,4 +12,4 @@
  */
 void log_utf8_string(const char *str, int len) __LOGGER_IMPORT(log_utf8_string);
 
-#endif //FLUENCE_C_SDK_LOGGER_H
+#endif // FLUENCE_C_SDK_LOGGER_H

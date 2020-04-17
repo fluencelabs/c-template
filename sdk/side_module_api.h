@@ -1,5 +1,5 @@
-#ifndef C_TEMPLATE_SIDE_MODULE_API_H
-#define C_TEMPLATE_SIDE_MODULE_API_H
+#ifndef FLUENCE_C_SDK_SIDE_MODULE_API_H
+#define FLUENCE_C_SDK_SIDE_MODULE_API_H
 
 #include <string.h>
 #include <stdlib.h>
@@ -59,4 +59,4 @@ char * module_name ## _call(const char *ptr, int length) { \
     return result_out;\
 }
 
-#endif //C_TEMPLATE_SIDE_MODULE_API_H
+#endif // FLUENCE_C_SDK_SIDE_MODULE_API_H

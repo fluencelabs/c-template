@@ -3,3 +3,4 @@
 
 # compiled wasm files
 *.wasm
+*.wat
